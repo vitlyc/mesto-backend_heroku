@@ -1,0 +1,41 @@
+{
+    "name": "express-mesto",
+    "version": "1.0.0",
+    "description": "`/routes` — папка с файлами роутера  \r `/controllers` — папка с файлами контроллеров пользователя и карточки   \r `/models` — папка с файлами описания схем пользователя и карточки",
+    "main": "app.js",
+    "scripts": {
+        "lint": "npx eslint .",
+        "start": "set PORT=3001 && node app.js",
+        "dev": "set PORT=3001 && nodemon app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vitlyc/express-mesto.git"
+    },
+    "keywords": [],
+    "author": "vitlyc",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/vitlyc/express-mesto/issues"
+    },
+    "homepage": "https://github.com/vitlyc/express-mesto#readme",
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "body-parser": "^1.19.0",
+        "celebrate": "^15.0.0",
+        "cors": "^2.8.5",
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1",
+        "express-winston": "^4.2.0",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^6.0.12",
+        "validator": "^13.7.0",
+        "winston": "^3.3.3"
+    },
+    "devDependencies": {
+        "eslint": "^8.2.0",
+        "eslint-config-airbnb-base": "^14.2.1",
+        "eslint-plugin-import": "^2.25.2",
+        "nodemon": "^2.0.14"
+    }
+}
