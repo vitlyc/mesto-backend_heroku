@@ -5,8 +5,8 @@
     "main": "app.js",
     "scripts": {
         "lint": "npx eslint .",
-        "start": "set PORT=3001 && node app.js",
-        "dev": "set PORT=3001 && nodemon app.js"
+        "start": "node app.js",
+        "dev": "nodemon app.js"
     },
     "repository": {
         "type": "git",
@@ -28,7 +28,7 @@
         "express": "^4.17.1",
         "express-winston": "^4.2.0",
         "jsonwebtoken": "^8.5.1",
-        "mongoose": "^6.0.12",
+        "mongoose": "^6.2.11",
         "validator": "^13.7.0",
         "winston": "^3.3.3"
     },

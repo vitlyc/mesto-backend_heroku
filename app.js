@@ -18,20 +18,20 @@ const { PORT = 3000 } = process.env;
 
 const app = express();
 
-mongoose.connect("mongodb://localhost:27017/mestodb", {
+mongoose.connect(`${process.env.MONGODB_URI}`, {
   useNewUrlParser: true,
 });
 
-const options = {
-  origin: ["http://localhost:3001", "https://mesto-frontend.herokuapp.com"],
-  methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
-  preflightContinue: false,
-  optionsSuccessStatus: 204,
-  allowedHeaders: ["Content-Type", "origin", "Authorization"],
-  credentials: true,
-};
+// const options = {
+//   origin: ["http://localhost:3001", "https://mesto-frontend.herokuapp.com"],
+//   methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
+//   preflightContinue: false,
+//   optionsSuccessStatus: 204,
+//   allowedHeaders: ["Content-Type", "origin", "Authorization"],
+//   credentials: true,
+// };
 
-app.use("*", cors(options));
+// app.use("*", cors(options));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -44,6 +44,13 @@ app.use(requestLogger); //логгер
 // );
 
 // app.use(limiter);
+app.get("/test", (req, res) => {
+  res.status(405).send("hi");
+  console.log(`${process.env.PORT}`);
+  console.log(`${process.env.JWT_SECRET}`);
+  console.log(`${process.env.NODE_ENV}`);
+  console.log(`${process.env.MONGODB_URI}`);
+});
 
 app.post(
   "/signin",
@@ -91,6 +98,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`App listening on port ${PORT}`);
-  // console.log(BASE_PATH)
+  console.log(`App listening on port ${PORT} ${process.env.PORT}`);
 });

@@ -5,7 +5,7 @@ const getToken = (header) => header.replace("Bearer ", "");
 
 module.exports = (req, res, next) => {
   const { authorization } = req.headers;
-  console.log(req.headers);
+  // console.log(authorization);
 
   const { NODE_ENV, JWT_SECRET } = process.env;
   if (!authorization || !authorization.startsWith("Bearer ")) {
